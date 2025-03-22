@@ -3,7 +3,7 @@ import { FaUserTie } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import { AuthContext } from "../provider/AuthProvider";
 const Navbar = () => {
-  const {user} = useContext(AuthContext)
+  const {user, logOut} = useContext(AuthContext)
     return (
       <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
         <div className='flex-1'>
@@ -35,7 +35,7 @@ const Navbar = () => {
                 <img
                   referrerPolicy='no-referrer'
                   alt='User Profile Photo'
-                  src=''
+                  src={user?.photoURL}
                 />
               </div>
             </div>
@@ -56,7 +56,12 @@ const Navbar = () => {
                 <div>Bid Requests</div>
               </li>
               <li className='mt-2'>
-                <button className='bg-gray-200 block text-center'>Logout</button>
+              <button
+                  onClick={logOut}
+                  className='bg-gray-200 block text-center'
+                >
+                  Logout
+                </button>
               </li>
             </ul>
           </div>)}
