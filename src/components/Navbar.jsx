@@ -13,14 +13,14 @@ const Navbar = () => {
           </Link>
         </div>
         <div className='flex-none'>
-          <ul className='menu menu-horizontal px-1'>
+        <ul className='menu menu-horizontal px-1 '>
             <Link to='/'>
-              <div>Home</div>
+              <div className="text-center">Home</div>
             </Link>
   
             {!user && (
-            <li>
-              <Link to='/login'>Login</Link>
+            <li >
+              <Link  to='/login'>Login</Link>
             </li>
           )}
           </ul>
