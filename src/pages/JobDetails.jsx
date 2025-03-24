@@ -23,7 +23,7 @@ const JobDetails = () => {
   const handleFormSubmission = async e => {
     e.preventDefault()
     if (user?.email === buyer?.email)
-      return toast.error('Action not permitted!')
+      return toast.error('you cant do this same profile!')
     const form = e.target
     const jobId = _id
     const price = parseFloat(form.price.value)
