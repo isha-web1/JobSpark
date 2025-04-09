@@ -3,7 +3,12 @@ import { FaUserTie } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import { AuthContext } from "../provider/AuthProvider";
 const Navbar = () => {
-  const {user, logOut} = useContext(AuthContext)
+  const {user, logOut,loading} = useContext(AuthContext)
+  if (loading) {
+    return <p>Loading user data...</p>;
+  }
+
+  
     return (
       <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
         <div className='flex-1'>
